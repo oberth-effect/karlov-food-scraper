@@ -1,0 +1,49 @@
+[project]
+name = "karlov_food_scraper"
+version = "0.0.1"
+authors = [{ name = "Štěpán Venclík", email = "stepan.venclik@matfyz.cuni.cz" }]
+description = "Simple utility to scrape menus of nearby restaraunts and post it to Slack"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+
+dependencies = [
+    "beautifulsoup4",
+    "requests",
+    "tabulate",
+]
+
+[build-system]
+requires = [
+    "setuptools>=42",
+]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[project.scripts]
+karlov_lunch = "karlov_food_scraper:run_scraper"
