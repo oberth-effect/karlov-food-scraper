@@ -2,7 +2,7 @@
 name = "karlov_food_scraper"
 version = "0.0.1"
 authors = [{ name = "Štěpán Venclík", email = "stepan.venclik@matfyz.cuni.cz" }]
-description = "Simple utility to scrape menus of nearby restaraunts and post it to Slack"
+description = "Simple utility to scrape lunch menus of selected restaraunts and post it to Slack"
 readme = "README.md"
 requires-python = ">=3.10"
 classifiers = [
