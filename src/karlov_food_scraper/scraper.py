@@ -17,7 +17,7 @@ SCRAPERS: list[FoodScraper] = [
 ]
 
 parser = argparse.ArgumentParser(
-    prog="karlov_food_scraper",
+    prog="karlov_lunch",
     description="Displays the lunch menu of selected restaurants near Karlov MFF, Optionally sends Slack message via webhook.",  # noqa: E501
     epilog="Looks like meat's back on the menu boys",
 )

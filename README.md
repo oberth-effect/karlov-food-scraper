@@ -20,7 +20,7 @@ pip install .
 ## Usage
 ```console
 > karlov_lunch --help
-usage: karlov_food_scraper [-h] [-s [webhook-url]]
+usage: karlov_lunch [-h] [-s [webhook-url]]
 
 Displays the lunch menu of selected restaurants near Karlov MFF, Optionally sends Slack message via webhook.
 
