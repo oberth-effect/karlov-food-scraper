@@ -62,10 +62,19 @@ def send_slack(url: str, payload: dict):
 
 def build_blocks(menu: DailyMenu) -> list[dict]:
     soups_text = "\n".join(str(s) for s in menu.soups)
-    foods_text = "\n".join(str(m) for m in menu.menus) + "\n\n" + "\n".join(str(f) for f in menu.additional_foods)
+    menus_text = "\n".join(str(m) for m in menu.menus)
+    foods_text = "\n".join(str(f) for f in menu.additional_foods)
+    blocks = [slack_lib.header(menu.restaurant_name)]
 
-    restaurant_text = soups_text + "\n\n" + foods_text
-    return [slack_lib.header(menu.restaurant_name), slack_lib.mrkdwn_section(restaurant_text)] + [slack_lib.divider()]
+    if soups_text:
+        blocks.append(slack_lib.mrkdwn_section(soups_text))
+    if menus_text:
+        blocks.append(slack_lib.mrkdwn_section(menus_text))
+    if foods_text:
+        blocks.append(slack_lib.mrkdwn_section(foods_text))
+
+    blocks.append(slack_lib.divider())
+    return blocks
 
 
 def build_slack_payload(day_menus: list[DailyMenu]) -> dict:
