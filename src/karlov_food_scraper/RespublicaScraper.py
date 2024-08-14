@@ -1,9 +1,10 @@
 from .FoodScraper import DailyMenu, FoodItem, FoodScraper, MenuCombination
 from .MenickaCzScraper import MenickaCzScraper
+import re
 
 
 def is_menu_name(name: str) -> bool:
-    return "menu -" in name.lower()
+    return bool(re.search(r"menu\s[0-9]+", name.lower()))
 
 
 def try_find_food(name: str, food_list: list[FoodItem]) -> FoodItem | None:
