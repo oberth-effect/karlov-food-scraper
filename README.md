@@ -7,25 +7,28 @@ Not very reusable, except for `MenickaCzScraper.py` which can be used for any re
 
 ## Installation
 ### 1. Clone repo
-```bash
-git clone 
+```shell
+git clone https://github.com/oberth-effect/karlov-food-scraper.git
 ```
 
 ### 2. Install using pip
-```bash
+```shell
 cd karlov-food-scraper
 pip install .
 ```
 
 ## Usage
-### Print to terminal
+```shell
+> karlov_lunch --help
+usage: karlov_food_scraper [-h] [-s [webhook-url]]
 
-```bash
-karlov_lunch
-```
+Displays the lunch menu of selected restaurants near Karlov MFF, Optionally sends Slack message via webhook.
 
-### Post to Slack
-```bash
-karlov_lunch -s <slack_webhook_url>
+options:
+  -h, --help            show this help message and exit
+  -s [webhook-url], --slack [webhook-url]
+                        Send menu to Slack instead of printing it to stdout (uses 'Incoming Webhook').
+
+Looks like meat's back on the menu boys
 ```
 
