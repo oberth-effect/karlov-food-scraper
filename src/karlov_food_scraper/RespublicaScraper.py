@@ -3,7 +3,7 @@ from .MenickaCzScraper import MenickaCzScraper
 
 
 def is_menu_name(name: str) -> bool:
-    return "menu" in name.lower() and "menu box" not in name.lower()
+    return "menu -" in name.lower()
 
 
 def try_find_food(name: str, food_list: list[FoodItem]) -> FoodItem | None:
