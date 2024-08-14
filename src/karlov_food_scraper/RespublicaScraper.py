@@ -1,6 +1,7 @@
+import re
+
 from .FoodScraper import DailyMenu, FoodItem, FoodScraper, MenuCombination
 from .MenickaCzScraper import MenickaCzScraper
-import re
 
 
 def is_menu_name(name: str) -> bool:
