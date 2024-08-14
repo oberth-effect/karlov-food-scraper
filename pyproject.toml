@@ -4,7 +4,7 @@ version = "0.0.1"
 authors = [{ name = "Štěpán Venclík", email = "stepan.venclik@matfyz.cuni.cz" }]
 description = "Simple utility to scrape lunch menus of selected restaraunts and post it to Slack"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 classifiers = [
     "Development Status :: 4 - Beta",
     "Programming Language :: Python :: 3",
