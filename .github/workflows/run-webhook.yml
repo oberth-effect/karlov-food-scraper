@@ -26,5 +26,5 @@ jobs:
     - name: Run Webhook
       env:
         WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-      run: karlov_lunch -s "$WEBHOOK$
+      run: karlov_lunch -s "$WEBHOOK"
     
