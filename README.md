@@ -18,7 +18,7 @@ pip install .
 ```
 
 ## Usage
-```shell
+```console
 > karlov_lunch --help
 usage: karlov_food_scraper [-h] [-s [webhook-url]]
 
