@@ -5,7 +5,7 @@ stages:
 webhook-job:   
   stage: run_webhook
   rules:
-   - when: manual
+    - if: $CI_PIPELINE_SOURCE == "schedule"
 
   image: python:3.12
 
