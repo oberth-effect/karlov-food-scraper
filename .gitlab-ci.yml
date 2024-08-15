@@ -1,6 +1,9 @@
 stages:          
   - run_webhook
 
+ rules:
+   - when: manual
+
 webhook-job:   
   stage: run_webhook
   image: python:3.12
