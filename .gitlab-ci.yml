@@ -10,4 +10,4 @@ webhook-job:
   image: python:3.12
 
   before_script: pip install .
-  script: karlov_lunch
+  script: karlov_lunch -s $SLACK_WEBHOOK
