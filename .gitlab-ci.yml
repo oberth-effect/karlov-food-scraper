@@ -1,11 +1,12 @@
 stages:          
   - run_webhook
 
- rules:
-   - when: manual
 
 webhook-job:   
   stage: run_webhook
+  rules:
+   - when: manual
+
   image: python:3.12
 
   before_script: pip install .
