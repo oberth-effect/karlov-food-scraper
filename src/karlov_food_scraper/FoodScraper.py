@@ -61,14 +61,18 @@ class DailyMenu:
 class FoodScraper:
     menu_url: str
 
-    def _get_html_soup(self):
+    def _get_html_soup(self, xml=False):
         headers = {
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"  # noqa: E501
         }
         r = requests.get(self.menu_url, allow_redirects=True, headers=headers)
         if r.status_code != 200:
             raise Exception(f"Could not download the page, got HTTP Code {r.status_code}")
-        soup = BeautifulSoup(r.text, "html.parser")
+
+        if xml:
+            soup = BeautifulSoup(r.content, "xml", from_encoding="utf-8")
+        else:
+            soup = BeautifulSoup(r.content, "html.parser")
         return soup
 
     def get_food_list(self) -> DailyMenu:

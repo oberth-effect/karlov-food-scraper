@@ -7,6 +7,7 @@ from tabulate import SEPARATING_LINE, tabulate
 from . import slack_lib
 from .BuketScraper import BuketScraper
 from .FoodScraper import DailyMenu, FoodScraper
+from .MenzaScraper import MenzaScraper
 from .RespublicaScraper import RespublicaScraper
 from .ZlutaPumpaScraper import ZlutaPumpaScraper
 
@@ -14,6 +15,7 @@ SCRAPERS: list[FoodScraper] = [
     BuketScraper(),
     ZlutaPumpaScraper(),
     RespublicaScraper(),
+    MenzaScraper("Menza Budeč", 15),
 ]
 
 parser = argparse.ArgumentParser(

@@ -15,6 +15,7 @@ dependencies = [
     "beautifulsoup4",
     "requests",
     "tabulate",
+    "lxml",
 ]
 
 [build-system]
