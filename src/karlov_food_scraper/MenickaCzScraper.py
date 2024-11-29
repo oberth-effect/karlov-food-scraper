@@ -22,7 +22,7 @@ class MenickaCzScraper(FoodScraper):
         super().__init__()
         self.restaurant_name = restaurant_name
         self.restaurant_id = restaurant_id
-        self.menu_url = f"https://www.menicka.cz/tisk.php?restaurace={restaurant_id}"
+        self.menu_url = f"https://www.menicka.cz/tisk-profil.php?restaurace={restaurant_id}"
 
     def _get_day_food_list(self, day: int) -> DailyMenu:
         soup = self._get_html_soup()
