@@ -14,7 +14,7 @@ class FoodItem:
     @property
     def fmt_price(self) -> str:
         if self.alternative_price_czk:
-            return f"{self.price_czk if self.price_czk else "???"}/{self.alternative_price_czk} Kč"
+            return f"{self.price_czk if self.price_czk else '???'}/{self.alternative_price_czk} Kč"
         elif self.price_czk:
             return f"{self.price_czk} Kč"
         else:
@@ -35,7 +35,7 @@ class MenuCombination:
 
     @property
     def joined_price(self):
-        return f"{self.food.price_czk if self.food.price_czk else "???"}/{self.menu_price_czk} Kč"
+        return f"{self.food.price_czk if self.food.price_czk else '???'}/{self.menu_price_czk} Kč"
 
     @property
     def fmt_price(self):

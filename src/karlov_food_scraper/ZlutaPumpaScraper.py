@@ -44,7 +44,7 @@ class ZlutaPumpaScraper(FoodScraper):
         food_list = list(map(lambda x: (remove_description(x[0]), get_price(x[1])), menu_list))
 
         menus = [
-            MenuCombination(food=FoodItem(f[0], None), menu_price_czk=f[1], menu_name=f"MENU {i+1}")
+            MenuCombination(food=FoodItem(f[0], None), menu_price_czk=f[1], menu_name=f"MENU {i + 1}")
             for i, f in enumerate(food_list[2:])
         ]
 
