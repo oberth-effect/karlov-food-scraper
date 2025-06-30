@@ -98,9 +98,18 @@ def build_slack_payload(day_menus: list[DailyMenu]) -> dict:
     }
 
 
+def run_s(s: FoodScraper):
+    try:
+        r = s.get_food_list()
+    except Exception as e:
+        print(f"Error at {s}: {e}")
+    else:
+        return r
+
+
 def run_scraper():
     args = parser.parse_args()
-    menus = [s.get_food_list() for s in SCRAPERS]
+    menus = list(filter(lambda x: x is not None, [run_s(s) for s in SCRAPERS]))
 
     if args.slack:
         payload = build_slack_payload(menus)
